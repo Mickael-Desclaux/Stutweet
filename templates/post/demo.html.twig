@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Mes posts
+{% endblock %}
+
+{% block body %}
+    {% if age > 18 %}
+        <p>Vous êtes majeur.</p>
+    {% else %}
+        <p>Vous êtes mineur.</p> 
+    {% endif %}
+    Vous avez
+    {{age}}
+    ans.
+
+    {% set fruits = ["banana", "apple", "cherry"] %}
+
+    <ul>
+    {% for fruit in fruits %}
+        <li>{{fruit}}</li>
+    {% endfor %}
+    </ul>
+
+    {% set numbers = [3, 5, 7, 2, 12, 24, 18, 6] %}
+    <i>{{max(numbers)}}</i> </br>
+
+    <button class="btn btn-primary m-5">Bouton Bootstrap</button>
+    
+{% endblock %}
