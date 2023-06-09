@@ -3,9 +3,9 @@
 
 {% block body %}
 
-	<div class="d-flex justify-content-around flex-wrap container mt-5">
+	<div class="d-flex flex-wrap container-fluid mt-3 .offset-lg-1">
 		{% for post in posts %}
-			<div class="card" style="width: 18rem;">
+			<div class="card m-5" style="width: 20rem;">
 
 				{% if post.image %}	
 					<img src={{post.image}} alt={{post.title}}
@@ -13,13 +13,12 @@
 				<div class="card-body">
 
 				{% if post.title %}				
-					<h5 class="card-title">{{post.title}}</h5>
+					<h5 class="card-title text-center">{{post.title}}</h5>
 				{% endif %}
-					<p class="card-text">{{post.content}}</p>
+					<p class="card-text text-center">{{post.content}}</p>
 
-				<a href="#" class="btn btn-danger">Supprimer</a>
-				<a href="#" class="btn btn-warning">Modifier</a>
-				</div>
+				<a href="{{ path('delete-post', {'id': post.id}) }}" class="btn btn-danger">Supprimer</a>
+				<a href="{{ path('edit-post', {'id': post.id}) }}" class="btn btn-warning">Modifier</a>
 			</div>
 		{% endfor %}
 	</div>

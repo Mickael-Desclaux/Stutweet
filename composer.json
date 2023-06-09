@@ -17,6 +17,7 @@
         "symfony/framework-bundle": "6.3.*",
         "symfony/monolog-bundle": "^3.0",
         "symfony/runtime": "6.3.*",
+        "symfony/security-bundle": "6.3.*",
         "symfony/security-csrf": "6.3.*",
         "symfony/twig-bundle": "6.3.*",
         "symfony/validator": "6.3.*",
@@ -73,6 +74,7 @@
         }
     },
     "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "symfony/debug-bundle": "6.3.*",
         "symfony/maker-bundle": "^1.48",
         "symfony/stopwatch": "6.3.*",
