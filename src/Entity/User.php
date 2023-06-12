@@ -34,6 +34,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: "App\Entity\Post", mappedBy: "user")]
     private $posts;
 
+    private $passwordHasher;
+    
     public function __construct(UserPasswordHasherInterface $passwordHasher) {
         $this->passwordHasher = $passwordHasher;
         $this->posts = new ArrayCollection();
@@ -95,9 +97,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function setPassword(string $password): self
     {
-        dump($password);
         $this->password = $this->passwordHasher->hashPassword($this, $password);
-        dump($this->password);
         return $this;
     }
 
